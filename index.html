@@ -34,6 +34,14 @@
             margin: 20px auto;
             justify-content:space-evenly;
         }
+        .dark_container{
+            width: 134px;
+            margin: 0px auto;
+        }
+
+        .dark_btn,.btn{
+             font-size: 20px;
+        }
     </style>
 </head>
 <body class="light dark" id="body">
@@ -48,7 +56,7 @@
         <button onclick="bulboff()" class="btn">OFF</button>
     </div>
 
-    <div onclick="changeTheme()"><button>🌒</button></div>
+    <div onclick="changeTheme()" class="dark_container"><button class="dark_btn">Dark/Light🌒</button></div>
 
     <script>
         function bulbon(){
