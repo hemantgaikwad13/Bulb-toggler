@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    
+    <title>Bulb toggler and Dark/Light theme</title>
+    <style>
+        .dark{
+            color: white;
+            background-color: slategrey;
+        }
+
+        .light{
+            color: black;
+            background-color: azure;
+        }
+        .center{
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .img_box{
+            margin-top: 5px;
+            width: 200px;
+        }
+
+        .img{
+            height: 250px;
+        }
+        .darktheme{
+            color: white;
+            background-color: black;
+        }
+
+        .button_container{
+            margin: 20px auto;
+            justify-content:space-evenly;
+        }
+    </style>
+</head>
+<body class="light dark" id="body">
+    
+    <div class=" center img_box">
+        <H3 >Bulb Toggler</H3>
+        <img src="./img/light_off.png" class="img" id="bulb_img">
+    </div>
+
+    <div class="button_container">
+        <button onclick="bulbon()" class="btn">ON</button>
+        <button onclick="bulboff()" class="btn">OFF</button>
+    </div>
+
+    <div onclick="changeTheme()"><button>🌒</button></div>
+
+    <script>
+        function bulbon(){
+            const bulbImg=document.getElementById("bulb_img")
+            bulbImg.src="./img/light_on.png";
+        }
+
+        function bulboff(){
+            const bulbImg=document.getElementById("bulb_img")
+            bulbImg.src="./img/light_off.png";
+        }
+
+        let lightmode=false
+        
+        function changeTheme(){
+            const bodyElement=document.getElementById("body")
+            
+           if(lightmode){
+            bodyElement.classList.add("dark");
+            lightmode=false;
+           }
+           
+           else{
+            bodyElement.classList.remove("dark");
+            lightmode=true;
+           }
+        }
+    </script>
+</body>
+</html>
